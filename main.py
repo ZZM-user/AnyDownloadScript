@@ -10,6 +10,7 @@ from pydantic_settings import BaseSettings
 
 from parser.dy_parse import DyParser
 from parser.parser_factory import ParserFactory
+from parser.wb_parse import WbParser
 from parser.xhs_parse import XhsParser
 from util import ip_util
 
@@ -43,6 +44,7 @@ settings = Settings()
 # 注册解析器
 ParserFactory.register(XhsParser())
 ParserFactory.register(DyParser())
+ParserFactory.register(WbParser())
 
 
 class ResponseModel(BaseModel):

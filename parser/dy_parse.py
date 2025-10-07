@@ -22,7 +22,7 @@ class DyParser(BaseParser):
         }
 
     async def get_platform(self) -> Platform:
-        return Platform.XIAO_HONG_SHU
+        return Platform.DOU_YIN
 
     async def is_me(self, url: str) -> bool:
         """
