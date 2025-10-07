@@ -8,6 +8,7 @@ from loguru import logger
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
 
+from parser.dy_parse import DyParser
 from parser.parser_factory import ParserFactory
 from parser.xhs_parse import XhsParser
 from util import ip_util
@@ -39,7 +40,9 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
+# 注册解析器
 ParserFactory.register(XhsParser())
+ParserFactory.register(DyParser())
 
 
 class ResponseModel(BaseModel):
